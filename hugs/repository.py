@@ -29,6 +29,4 @@ class Repository:
 
                 function = functions[expression.name]
                 function.__sql__ = expression.body
-
-        for name, function in functions.items():
-            setattr(self, name, types.MethodType(function, self))
+                setattr(self, expression.name, types.MethodType(function, self))
