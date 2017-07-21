@@ -3,9 +3,9 @@ from itertools import chain
 
 
 _TEMPLATE = """\
-def {name}(self, cursor{args}):
+def {name}(self, __cursor{args}):
     {doc!r}
-    return cursor.execute({body!r}{params})
+    return __cursor.execute({body!r}{params})
 """
 
 

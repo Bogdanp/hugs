@@ -9,7 +9,7 @@ Hugs lets you map SQL expressions to Python functions.
 -- name: add_user
 -- args: username
 -- doc: Adds a user.
-INSERT INTO users (username) VALUES (:username)
+INSERT INTO users (username) VALUES (:username);
 
 ---
 -- name: get_users
