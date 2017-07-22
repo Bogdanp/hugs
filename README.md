@@ -49,7 +49,7 @@ users_repo.get_users(cursor)
 print(cursor.fetchone())
 ```
 
-### psycopg2
+### PostgreSQL
 
 `queries.sql`:
 
@@ -83,3 +83,7 @@ with connection.cursor() as cursor:
 
 connection.close()
 ```
+
+## License
+
+hugs is licensed under the 3-clause BSD license.
