@@ -2,7 +2,7 @@
 .cache
 .coverage
 __pycache__
-anom.egg-info
+hugs.egg-info
 build
 dist
 htmlcov
