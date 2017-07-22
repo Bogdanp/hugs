@@ -4,7 +4,6 @@
 [![Test Coverage](https://codeclimate.com/github/Bogdanp/hugs/badges/coverage.svg)](https://codeclimate.com/github/Bogdanp/hugs/coverage)
 [![Code Climate](https://codeclimate.com/github/Bogdanp/hugs/badges/gpa.svg)](https://codeclimate.com/github/Bogdanp/hugs)
 [![PyPI version](https://badge.fury.io/py/hugs.svg)](https://badge.fury.io/py/hugs)
-[![Documentation](https://img.shields.io/badge/doc-latest-brightgreen.svg)](http://hugs.io)
 
 **hugs** lets you map SQL expressions to Python functions.
 
