@@ -64,6 +64,8 @@ INSERT INTO users (username, password) VALUES (%(username)s, %(password)s);
 SELECT * FROM users;
 ```
 
+`example.py`:
+
 ```python
 import psycopg2
 
@@ -77,7 +79,7 @@ users_repo.load_queries("queries.sql")
 
 with connection.cursor() as cursor:
     users_repo.add_user(cursor, "bogdan", "123")
-    users_repo.find_user_by_username(cursor, "bogdan")
+    users_repo.get_users(cursor)
     print(cursor.fetchone())
 
 connection.close()
