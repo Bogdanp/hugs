@@ -13,41 +13,6 @@
 
 ## Examples
 
-### SQLite
-
-`queries.sql`:
-
-``` sql
----
--- name: add_user
--- args: username, password
--- doc: Adds a user.
-INSERT INTO users (username, password) VALUES (:username, :password);
-
----
--- name: get_users
-SELECT * FROM users;
-```
-
-`example.py`:
-
-``` python
-import sqlite3
-
-from hugs import Repository
-
-connection = sqlite3.Connection(":memory:")
-users_repo = Repository()
-users_repo.load_queries("queries.sql")
-
-cursor = connection.cursor()
-users_repo.add_user(cursor, "bogdan", "123")
-connection.commit()
-
-users_repo.get_users(cursor)
-print(cursor.fetchone())
-```
-
 ### PostgreSQL
 
 `queries.sql`:
@@ -83,6 +48,41 @@ with connection.cursor() as cursor:
     print(cursor.fetchone())
 
 connection.close()
+```
+
+### SQLite
+
+`queries.sql`:
+
+``` sql
+---
+-- name: add_user
+-- args: username, password
+-- doc: Adds a user.
+INSERT INTO users (username, password) VALUES (:username, :password);
+
+---
+-- name: get_users
+SELECT * FROM users;
+```
+
+`example.py`:
+
+``` python
+import sqlite3
+
+from hugs import Repository
+
+connection = sqlite3.Connection(":memory:")
+users_repo = Repository()
+users_repo.load_queries("queries.sql")
+
+cursor = connection.cursor()
+users_repo.add_user(cursor, "bogdan", "123")
+connection.commit()
+
+users_repo.get_users(cursor)
+print(cursor.fetchone())
 ```
 
 ## License
