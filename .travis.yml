@@ -2,7 +2,8 @@ language: python
 python:
   - "3.6"
 install:
-  - pip install -r requirements-dev.txt codeclimate-test-reporter
+  - pip install -U pipenv codeclimate-test-reporter
+  - pipenv install --dev
 script:
   - py.test -sv
 after_success:
