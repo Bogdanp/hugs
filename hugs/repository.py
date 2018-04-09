@@ -29,4 +29,5 @@ class Repository:
 
                 function = functions[expression.name]
                 function.__sql__ = expression.body
+                function.is_command = expression.is_command
                 setattr(self, expression.name, types.MethodType(function, self))

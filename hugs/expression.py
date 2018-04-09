@@ -9,19 +9,20 @@ def {name}(self, __cursor{args}):
 """
 
 
-class Expression(namedtuple("Expression", ("name", "args", "kwargs", "doc", "body"))):
+class Expression(namedtuple("Expression", ("name", "args", "kwargs", "is_command", "doc", "body"))):
     """A SQL expression plus some metadata.
 
     Parameters:
       name(str): The name of the expression.
       args(tuple[str]): The positional argument names.
       kwargs(tuple[str]): The keyword-only argument names.
+      is_command(bool): Whether or not the expression is a command.
       doc(str): The docstring.
       body(str): The full body of the expression.
     """
 
-    def __new__(cls, name, args=(), kwargs=(), doc="", body=""):
-        return super().__new__(cls, name, args, kwargs, doc, body)
+    def __new__(cls, name, args=(), kwargs=(), is_command=False, doc="", body=""):
+        return super().__new__(cls, name, args, kwargs, is_command, doc, body)
 
     def to_source_code(self):
         args, params = "", ""

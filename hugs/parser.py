@@ -52,7 +52,7 @@ def _parse_expression(lines):
     Returns:
       Expression
     """
-    metadata, body = {}, []
+    metadata, body = {"is_command": False}, []
     while True:
         try:
             if lines.peek().rstrip() == "---":
@@ -70,6 +70,10 @@ def _parse_expression(lines):
     body = "\n".join(body).strip()
     if "name" not in metadata:
         raise ParseError(f"expression {body!r} doesn't have a name")
+
+    if metadata["name"].endswith("!"):
+        metadata["is_command"] = True
+        metadata["name"] = metadata["name"][:-1]
 
     for keyword in ("args", "kwargs"):
         if keyword in metadata:
