@@ -34,8 +34,7 @@ INSERT INTO users (username, password) VALUES (%(username)s, %(password)s) RETUR
 SELECT * FROM users;
 ```
 
-You can then point a `Repository` to that file to have it load it into
-memory:
+You can then point a `Repository` to that file to load it into memory:
 
 `example.py`:
 
