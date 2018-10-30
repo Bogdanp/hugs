@@ -20,4 +20,17 @@ setup(
     author="Bogdan Popa",
     author_email="popa.bogdanp@gmail.com",
     url="https://github.com/Bogdanp/hugs",
+    extras_require={
+        "dev": [
+            "bumpversion",
+            "dataclasses",
+            "flake8",
+            "flake8-quotes",
+            "isort",
+            "psycopg2-binary",
+            "pytest",
+            "pytest-cov",
+            "twine",
+        ]
+    },
 )

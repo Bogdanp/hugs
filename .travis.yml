@@ -4,8 +4,8 @@ services:
 python:
   - "3.6"
 install:
-  - pip install -U pipenv codeclimate-test-reporter
-  - pipenv install --dev
+  - pip install -U pip codeclimate-test-reporter
+  - pip install -e '.[dev]'
 script:
   - py.test -sv
 after_success:

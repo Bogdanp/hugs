@@ -10,7 +10,7 @@
 
 ## Installation
 
-    pipenv install hugs
+    pip install hugs
 
 
 ## Examples
