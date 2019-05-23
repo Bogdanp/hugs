@@ -4,9 +4,7 @@ services:
 python:
   - "3.6"
 install:
-  - pip install -U pip codeclimate-test-reporter
+  - pip install -U pip
   - pip install -e '.[dev]'
 script:
   - py.test -sv
-after_success:
-  - CODECLIMATE_REPO_TOKEN=83028bbf5db287a69114be2bccf903928dc0c240b1697bde800fb30ae9692e23 codeclimate-test-reporter
